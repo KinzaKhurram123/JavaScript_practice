@@ -47,11 +47,11 @@ var month = today.getMonth() + 1;
 
 var year = today.getFullYear();
 
-var today = date + "/" + month + "/" + year;
+var firstformat = date + "/" + month + "/" + year;
 
-var today = date + "-" + month + "-" + year;
+var secoundformat = date + "-" + month + "-" + year;
 
-console.log(today, "Question 2");
+console.log(firstformat, secoundformat, "Question 2");
 
 // Question No 3
 // 4. Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.
@@ -73,42 +73,48 @@ console.log(area, "question 3");
 // Question No 4
 // Write a JavaScript program to rotate the string 'w3resource' in the right direction. This is done by periodically removing one letter from the string end and attaching it to the front?
 
-var string = "w3resource";
-var s = string.length;
+// function reverse() {
+//   return string.split("").reverse().join("");
+// }
 
-function reverse() {
-  return string.split("").reverse().join("");
+function reverse(string) {
+  let newstr = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    newstr += string[i];
+  }
+  return newstr;
 }
-
-console.log(reverse(), "Q no 4");
+console.log(reverse("w3resource"), "Q no 4");
 
 // Question No 5
 // 6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
-
-for (var y = 2014; y <= 2050; y++) {
-  var date = new Date(y, 0, 1);
-  if (date.getDay() === 0) {
-    console.log("1st January is on " + y + " Question No 5");
+function checkSunday() {
+  for (var y = 2014; y <= 2050; y++) {
+    var date = new Date(y, 0, 1);
+    if (date.getDay() === 0) {
+      console.log("1st January is on " + y + " Question No 5");
+    }
   }
 }
+checkSunday();
 
 // Question No 6
 // Write a JavaScript program where the program takes a random integer between 1 and 10, and the user is then prompted to input a guess number. The program displays a message "Good Work" if the input matches the guess number otherwise "Not matched".
 
 function checknumber(guessnumber) {
-  let num = 12;
+  let num = 7;
   if (num === guessnumber) {
     return "Good Work";
   } else {
     return "Not matched";
   }
 }
-console.log(checknumber(11), "Q no 6");
+console.log(checknumber(5), "Q no 6");
 
 // Question No 7
 // . Write a JavaScript program to calculate the days left before Christmas.
 
-function calculate() {
+function calculateDays() {
   let newDate = new Date();
   let Christmas = new Date(newDate.getFullYear(), 11, 25);
   if (newDate.getMonth() === 11 && newDate.getDay() < 25) {
@@ -118,7 +124,7 @@ function calculate() {
     return false;
   }
 }
-console.log(calculate(), "Question no 7");
+console.log(calculateDays(), "Question no 7");
 
 // Question No 8
 // Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).
@@ -184,17 +190,16 @@ function SumOfIntiger(num1, num2) {
   }
 }
 
-console.log(SumOfIntiger(12, 10), "Question No 12");
+console.log(SumOfIntiger(12, 12), "Question No 12");
 
 // Question 13
 // Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple the absolute difference if the specified number is greater than 19.
 // function
 
 function sumOfNum(num) {
-  var sum = num - 19;
-  if (sum <= 19) {
-    return 3 * (sum - 19);
-  }
+  var currentNumber = 19;
+  if (num > 19) return 3 * (currentNumber - 19);
+  else return currentNumber - 19;
 }
 
 console.log(sumOfNum(20), "Question No 13");
@@ -211,81 +216,76 @@ console.log(checknumber(50, 29), "Q no 14");
 // Write a JavaScript program to check w4ther a given integer is within 20 of 100 or 400.
 
 function CheckingNum(num) {
-  if (num <= 20) {
-    console.log("Integer is within 20");
-    4;
+  console.log("nummm", num, (20 * 100) / 100, (20 * 400) / 100);
+  if (num === (20 * 100) / 100 || num === (20 * 400) / 100) {
+    console.log("Integer is within 20 of 100 or 400  Qno 15");
   } else {
-    console.log("Integer is not within 20");
-  }
-  if (num <= 100) {
-    console.log("Integer is within 100");
-  } else {
-    console.log("integer is not within 100");
-  }
-  if (num <= 400) {
-    console.log("Integer is within 400");
-  } else {
-    console.log("Integer is not within 400");
+    console.log("Integer is not  within 20 of 100 or 400  Qno 15");
   }
 }
-console.log(CheckingNum(375), "Q no 15");
+CheckingNum(80);
+// again
 
 // Question 16
 // 20. Write a JavaScript program to check two given integers whether one is positive and another one is negative.
 
 function integers(no1, no2) {
-  if ((no1 < 0 && no2 < 0) || (no1 > 0 && no2 > 0)) {
+  if ((no1 < 0 && no2 > 0) || (no1 > 0 && no2 < 0)) {
     return true;
   } else {
     return false;
   }
 }
-console.log(integers(2, -2), "Q no 16");
+console.log(integers(-2, 2), "Q no 16");
 
 // Question 17
 // Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string.
 
 function checkString(string1) {
   if (string1.substring(0, 2) === "Py") {
-    return true;
+    return string1;
   } else {
-    return false;
+    return "py" + string1;
   }
 }
 
-console.log(checkString("Python"), "Q no 17");
+console.log(checkString("java"), "Q no 17");
 
 // Question 18
 // Write a JavaScript program to remove a character at the specified position in a given string and return the modified string.
 
-function modified(start, end) {
+function modified(start) {
   let string = "helloWorld";
-  var modifiedString = string.slice(start, end);
-  return modifiedString;
+  var modifiedString = string.split("")
+  let updatedString = modifiedString?.splice(start , 1).join("")
+  return updatedString;
 }
-console.log(modified(1, -1), "Q no 18");
+console.log(modified(1), "Q no 18");
+// wrong
 
 // Question 19
 // 23. Write a JavaScript program to create a new string from a given string by changing the position of the first and last characters. The string length must be broader than or equal to 1.
 function newString(newstr) {
-  let string = "heyWorld";
-  let str = string.substring(1, -1);
-  let midstr = str + newstr + str;
-  return midstr;
+  let array = newstr.split("");
+  let temp = array[0];
+  array[0] = array[array.length - 1];
+  array[array.length - 1] = temp;
+  return array.join("");
 }
 console.log(newString("abcd"), "Q no 19");
-// console.log(newString());
+// wrong
 
 // Question No 20
 // 25. Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
 function checkedNum(num) {
-  if (num % 3 || num % 7) {
+  if (num % 3 === 0 || num % 7 === 0) {
     return true;
   } else {
     return false;
   }
 }
-console.log(checkedNum(27), "Q no 20");
+console.log(checkedNum(62), "Q no 20");
+// wrong
 
 // Question 21
 //  Write a JavaScript program to create another string from a given string with the first character of the given string added to the front and back.
@@ -297,7 +297,7 @@ function AddedString(string) {
   let modified = string.substring(0, string.lenght - 1);
   // let givenString = "TestingUser";
   // let modified = givenString.substring(1, -1);
-  // return modified;
+  return modified;
 }
 console.log(AddedString("ThisIsTesting"), "Q no 21");
 

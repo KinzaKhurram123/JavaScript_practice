@@ -73,10 +73,6 @@ console.log(area, "question 3");
 // Question No 4
 // Write a JavaScript program to rotate the string 'w3resource' in the right direction. This is done by periodically removing one letter from the string end and attaching it to the front?
 
-// function reverse() {
-//   return string.split("").reverse().join("");
-// }
-
 function reverse(string) {
   let newstr = "";
   for (let i = string.length - 1; i >= 0; i--) {
@@ -224,7 +220,6 @@ function CheckingNum(num) {
   }
 }
 CheckingNum(80);
-// again
 
 // Question 16
 // 20. Write a JavaScript program to check two given integers whether one is positive and another one is negative.
@@ -254,17 +249,17 @@ console.log(checkString("java"), "Q no 17");
 // Question 18
 // Write a JavaScript program to remove a character at the specified position in a given string and return the modified string.
 
-function modified(start) {
-  let string = "helloWorld";
-  var modifiedString = string.split("")
-  let updatedString = modifiedString?.splice(start , 1).join("")
-  return updatedString;
+function modified(str, position) {
+  let num1 = str.substring(0, position);
+  let num2 = str.substring(position + 1, str.lenght);
+  return num1 + num2;
 }
-console.log(modified(1), "Q no 18");
+console.log(modified("JavaScript", 2), "Q no 18");
 // wrong
 
 // Question 19
 // 23. Write a JavaScript program to create a new string from a given string by changing the position of the first and last characters. The string length must be broader than or equal to 1.
+
 function newString(newstr) {
   let array = newstr.split("");
   let temp = array[0];
@@ -273,10 +268,10 @@ function newString(newstr) {
   return array.join("");
 }
 console.log(newString("abcd"), "Q no 19");
-// wrong
 
 // Question No 20
 // 25. Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
+
 function checkedNum(num) {
   if (num % 3 === 0 || num % 7 === 0) {
     return true;
@@ -285,7 +280,6 @@ function checkedNum(num) {
   }
 }
 console.log(checkedNum(62), "Q no 20");
-// wrong
 
 // Question 21
 //  Write a JavaScript program to create another string from a given string with the first character of the given string added to the front and back.
@@ -294,18 +288,17 @@ function AddedString(string) {
   if (string <= 1) {
     return string;
   }
-  let modified = string.substring(0, string.lenght - 1);
-  // let givenString = "TestingUser";
-  // let modified = givenString.substring(1, -1);
-  return modified;
+  let modified = string.substring(0, 1);
+  let addSrting = string.substring(1, string.lenght);
+  return modified + addSrting + modified;
 }
 console.log(AddedString("ThisIsTesting"), "Q no 21");
 
 // Question No 22
 // 26. Write a JavaScript program to create a string from a given string. This is done by taking the last 3 characters and adding them at both the front and back. The string length must be 3 or more.
+
 function Ques22(str) {
-  if ((str.lenght = 3)) {
-    str_len = 3;
+  if (str.length >= 3) {
     let givenstring = str.substring(str.length - 3);
     return givenstring + str + givenstring;
   } else {
@@ -313,10 +306,11 @@ function Ques22(str) {
   }
 }
 
-console.log(Ques22("ham"), "Q no 22");
+console.log(Ques22("kinza"), "Q no 22");
 
 // // Question No 23
 // // 27. Write a JavaScript program to check whether a string starts with 'Java' if it does not otherwise.
+
 function checkJava(given) {
   let check = given.substring(0, 4);
   if (check == "Java") {
@@ -329,6 +323,7 @@ console.log(checkJava("JavaScript"), "Q No 23");
 
 // Question 24
 // Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them falls within the range
+
 function integerVal(x, y) {
   if ((x >= 50 && x <= 99) || (y >= 50, y <= 99)) {
     return true;
@@ -336,10 +331,11 @@ function integerVal(x, y) {
     return false;
   }
 }
-console.log(integerVal(25, 100), "Q no 24");
+console.log(integerVal(25, 80), "Q no 24");
 
 // Question 25
 // Write a JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the specified range.
+
 function checkthreeNum(x, y, z) {
   if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99) || (z >= 50 && z <= 99)) {
     return true;
@@ -362,10 +358,11 @@ function Script(str) {
     return substr;
   }
 }
-console.log(Script("JavaScript"), "Q no 26");
+console.log(Script("jascript"), "Q no 26");
 
 // Question No 27
 // Write a JavaScript program to find the largest of three given integers.
+
 function checkLargestNum(x, y, z) {
   let val = 0;
   if (x > y) {
@@ -380,10 +377,11 @@ function checkLargestNum(x, y, z) {
   }
 }
 
-console.log(checkLargestNum("55", "37", "19"), "Q no 27");
+console.log(checkLargestNum(2, 7, 19), "Q no 27");
 
 // Question 28
 //  Write a JavaScript program to find the closest value to 100 from two numerical values.
+
 function closestVal(x, y) {
   let resx = x - 100;
   let resy = y - 100;
@@ -413,14 +411,11 @@ console.log(Checked(45, 55), "Q no 29");
 
 // Question No 30
 // Write a JavaScript program to find the largest number from the two given positive integers. The two numbers are in the range 40..60 inclusive.
+
 function findLargestNUm(x, y) {
   if ((x >= 40 && x <= 60) || (y >= 40 && y <= 60)) {
-    val = 0;
-    if (x > y) {
-      return (val = x);
-    } else {
-      return (val = y);
-    }
+    if (x > y) return x;
+    else return y;
   } else {
     return "Number Is not in the range of 40 to 60";
   }
@@ -440,6 +435,7 @@ function strResult(string, character) {
 }
 
 console.log(strResult("hey", "l"), "Q No 31");
+// incomplete
 
 // Question No 32
 //Write a JavaScript program that checks whether the last digit of three positive integers is the same.
@@ -456,6 +452,7 @@ console.log(CheckLastDigit(12, 22, 32), "Question No 32");
 
 // Question No 33
 // Write a JavaScript program to produce a new string that has the first 3 characters in lower case from a given string. If the string length is less than 3 convert all the characters to upper case.
+
 function CheckingChar(str) {
   if (str.length <= 3) {
     return str.toUpperCase();
@@ -470,6 +467,7 @@ console.log(CheckingChar("Happy"), "Question No 33");
 
 // Question no 34
 // Write a JavaScript program to check a student's total marks in various examinations. The student will get A+ grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam" the student will receive A+ grade and total marks must be greater than or equal to 90. If the student gets an A+ grade, return true, otherwise return false.
+
 function MarkCheck(mark) {
   if (mark >= 89 && mark <= 100) {
     return true;
@@ -491,3 +489,171 @@ function ComputeTheSum(x, y) {
 }
 
 console.log(ComputeTheSum(10, 40), "Q no 35");
+
+// Question No 36
+// 40. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.
+
+function CheckDiffernce(x, y) {
+  if (x == 8 || y == 8) {
+    return true;
+  }
+  if (x + y == 8 || x - y == 8) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(CheckDiffernce(4, 12), "Question No 36");
+
+// Question No 37
+// 41. Write a JavaScript program to check a set of three numbers; if the three numbers are the same return 30; otherwise return 20; and if two numbers are the same return 40.
+
+function CheckNum(x, y, z) {
+  if (x == y && y == z) {
+    return 30;
+  } else if (x == y || y == z || z == x) {
+    return 40;
+  } else return 20;
+}
+console.log(CheckNum(8, 8, 8), "Q no 37");
+
+// Question No 38
+// Write a JavaScript program to check whether three given numbers are increasing in strict or in soft mode.
+// Note: Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+
+function CheckModes(x, y, z) {
+  if (y > x && z > y) {
+    return "Strict Mode";
+  } else if (x > y || x == y) {
+    return "Soft Mode";
+  } else {
+    return undefined;
+  }
+}
+console.log(CheckModes(10, 15, 31), "Q No 38");
+console.log(CheckModes(22, 20, 31), "Q No 38");
+
+// Question No 39
+// Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.
+
+function CheckRightMostDigit(p, q, r) {
+  let check = p % 10 === q % 10 || p % 10 === r % 10 || q % 10 === r % 10;
+  return check;
+}
+console.log(CheckRightMostDigit(10, 23, 36), "Q no 39");
+//again
+
+// Question No 40
+// Write a JavaScript program to check from three given integers whether a number is greater than or equal to 20. It is less than the others
+
+function greaterthen(x, y, z) {
+  return (
+    (x >= 20 && (x < y || x < z)) ||
+    (y >= 20 && (y < x || y < z)) ||
+    (z >= 20 && (z < y || z < x))
+  );
+}
+
+console.log(greaterthen(20, 40, 20), "Q no 40");
+
+// Question No 41
+// Write a JavaScript program that checks two integer values and returns true if either one is 15 or if their sum or difference is 15.
+
+function Differnece(x, y) {
+  if (x == 15 || y == 15 || x + y == 15 || x - y == 15) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(Differnece(7, 9), "Q no 41");
+
+// Question No 42
+// Write a JavaScript program to check two given non-negative integers if one (not both) is a multiple of 7 or 11.
+
+function checkedNum(num) {
+  if (num % 7 === 0 || num % 11 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(checkedNum(62), "Q no 42");
+
+// Question No 43
+// Write a JavaScript program to check whether a given number exists in the range 40..10000.
+// For example 40 presents in 40 and 4000
+
+function checkGivenNumber(num) {
+  if (num >= 40 && num <= 10000) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(checkGivenNumber(80));
+
+// Question No 43
+// Write a JavaScript program to reverse a given string.
+
+function ReverseString(str) {
+  let newstr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newstr += str[i];
+  }
+  return newstr;
+}
+
+console.log(ReverseString("JavaScript"), "Q No 43");
+
+// Question No 44
+// Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.
+
+function replace(str) {
+  let str_len = str.substring(0, 1);
+  let str_len2 = str.substring(1, str.lenght);
+  return str_len2 + str_len;
+}
+
+console.log(replace("Kinza"), "Q no 44");
+
+// Question No 45
+// Write a JavaScript program to capitalize the first letter of each word in a given string.
+
+function capitalizeLetter(str) {
+  let str_len = str.substring(0, 1).toUpperCase();
+  let str_len2 = str.substring(1, str.lenght);
+
+  return str_len + str_len2;
+}
+console.log(capitalizeLetter("hello"), "Q no 45");
+
+// Question No 46
+// Write a JavaScript program to convert letters of a given string alphabetically.
+
+function Converting(str) {
+  let str_sort = str.split("").sort().join("");
+  return str_sort;
+}
+console.log(Converting("hello"), "Q no 46");
+
+// Question No 47
+// Write a JavaScript program to count the number of vowels in a given string.
+
+function CountVowels(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let count = 0;
+
+  for (let apha of str.toLowerCase()) {
+    if (vowels.includes(apha)) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(CountVowels("Apple"), "Q no 48");
+
+// Question 48
+// Write a JavaScript program to check whether a given string contains an equal number of p's and t's.

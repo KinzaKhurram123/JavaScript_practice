@@ -653,7 +653,103 @@ function CountVowels(str) {
   }
   return count;
 }
-console.log(CountVowels("Apple"), "Q no 48");
+console.log(CountVowels("Apple"), "Q no 47");
 
 // Question 48
 // Write a JavaScript program to check whether a given string contains an equal number of p's and t's.
+
+function CheckString(str) {
+  let countT = 0;
+  let countP = 0;
+  for (let i = 0; i < str.lenght; i++) {
+    if (str[i] === "t" || str[i] === "T") {
+      countT++;
+    } else if (str[i] === "p" || str[i] === "P") {
+      countP++;
+    }
+  }
+  return countP === countT;
+}
+console.log(CheckString("CheckPTs"), "Q No 48");
+
+// Question No 49
+// Write a JavaScript program to divide two positive numbers and return the result as string with properly formatted commas.
+
+function FormatedString(x, y) {
+  let divideresult = (x / y).toLocaleString();
+  return divideresult;
+}
+console.log(FormatedString(80, 6), "Question no 49");
+
+// Question No 50
+// Write a JavaScript program to create one string of specified copies (positive numbers) of a given string.
+
+// function specifiedString(str) {}
+
+// Question No 51
+// Write a JavaScript program to create an updated string of 4 copies of the last 3 characters of a given original string. The string length must be 3 and above.
+function CopyString(str) {
+  if (str.length >= 3) {
+    let strcopy = str.substring(str.length - 3);
+    return strcopy + strcopy + strcopy;
+  }
+}
+console.log(CopyString("KinzaKhurram"), "Question no 51");
+
+// Question nO 52
+// Write a JavaScript program to extract the first half of a even string.
+
+function ExtractedString(str) {
+  if (str.length % 2 === 0) {
+    let extractedstr = str.slice(0, str.length / 2);
+    return extractedstr;
+  } else {
+    return "string is not even";
+  }
+}
+console.log(ExtractedString("banana"), "Question no 52");
+
+// Question No 53
+// Write a JavaScript program to create a new string without the first and last characters of a given string.
+function NewString(str) {
+  let updated = str.substring(1, str.length - 1);
+  return updated;
+}
+console.log(NewString("hello"), "Question No 53");
+
+// Question no 54
+// Write a JavaScript program to concatenate two strings except for their first character.
+function concatenateStrings(str1, str2) {
+  let spliced = str1.slice(1) + str2.slice(1);
+  return spliced;
+}
+
+console.log(concatenateStrings("hello", "world"), "Question No 54");
+
+// Question No 55
+// Write a JavaScript program to move the last three characters to the start of a given string. The string length must be greater than or equal to three.
+
+function MoveCharacters(str) {
+  if (str.length >= 3) {
+    let str1 = str.substring(str.length - 3);
+    let str2 = str.slice(0, -3);
+    return str1 + str2;
+  }
+}
+
+console.log(MoveCharacters("indexJs"), "Ouestion No 55");
+
+// Question No 56
+// Write a JavaScript program to create a string using the middle three characters of a given string of odd length. The string length must be greater than or equal to three
+
+function OddString(str) {
+  if (str.length % 2 !== 0) {
+    let m = str.slice(str.length / 3);
+    console.log(m, "sdkjagsdkaksgdk");
+    let extractedstr = str.slice(0, str.length / 3);
+    return extractedstr;
+  }
+}
+console.log(OddString("strings"), "Question no 56");
+// Question 57
+// Write a JavaScript program to concatenate two strings and return the result. If the length of the strings does not match, then remove the characters from the longer string.

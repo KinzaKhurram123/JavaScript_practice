@@ -637,7 +637,9 @@ function Converting(str) {
   let str_sort = str.split("").sort().join("");
   return str_sort;
 }
-console.log(Converting("hello"), "Q no 46");
+console.log(Converting("kinza"), "Q no 46");
+
+// again
 
 // Question No 47
 // Write a JavaScript program to count the number of vowels in a given string.
@@ -679,7 +681,7 @@ function FormatedString(x, y) {
   let divideresult = (x / y).toLocaleString();
   return divideresult;
 }
-console.log(FormatedString(80, 6), "Question no 49");
+console.log(FormatedString(900000000, 90), "Question no 49");
 
 // Question No 50
 // Write a JavaScript program to create one string of specified copies (positive numbers) of a given string.
@@ -744,12 +746,57 @@ console.log(MoveCharacters("indexJs"), "Ouestion No 55");
 
 function OddString(str) {
   if (str.length % 2 !== 0) {
-    let m = str.slice(str.length / 3);
-    console.log(m, "sdkjagsdkaksgdk");
-    let extractedstr = str.slice(0, str.length / 3);
-    return extractedstr;
+    let mid = (str.length + 1) / 2;
+    return str.slice(mid - 2, mid + 1);
   }
+  return str;
 }
 console.log(OddString("strings"), "Question no 56");
+
 // Question 57
 // Write a JavaScript program to concatenate two strings and return the result. If the length of the strings does not match, then remove the characters from the longer string.
+
+function MathchStringLenght(str1, str2) {
+  let eql = Math.min(str1.length === str2.length);
+  if (eql) return true;
+  else return false;
+}
+
+console.log(MathchStringLenght("hello", "worlds"), "Question no 57");
+// wrong
+
+// Question No 58
+// Write a JavaScript program to test whether a string ends with "Script". The string length must be greater than or equal to 6.
+
+function CheckScript(str) {
+  if (str.substring(str.length - 6, str.length) === "Script") {
+    return true;
+  } else return false;
+}
+
+console.log(CheckScript("helo"), "Q no 58");
+
+// Question no 59
+// Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank.
+
+function DisplayCity(city) {
+  if (city.substring(0, 3) === "New") {
+    return city;
+  } else if (city.substring(0, 3) === "Los") {
+    return city;
+  } else return false;
+}
+
+console.log(DisplayCity("LosAngles"), "Question no 59");
+
+// Question no 60
+// Write a JavaScript program to create a new string from a given string. This program removes the first and last characters of the string if the first or last character is 'P'. Return the original string if the condition is not satisfied.
+
+function CreatNewStr(str) {
+  let arr = str.split("");
+  let last = arr.pop(0);
+  if (arr[0] && last === "p") {
+    return str.slice(1, -1);
+  } else return false;
+}
+console.log(CreatNewStr("hello"), "Q no 60");

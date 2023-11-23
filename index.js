@@ -758,6 +758,7 @@ console.log(OddString("strings"), "Question no 56");
 
 function MathchStringLenght(str1, str2) {
   let eql = Math.min(str1.length === str2.length);
+  console.log(eql);
   if (eql) return true;
   else return false;
 }

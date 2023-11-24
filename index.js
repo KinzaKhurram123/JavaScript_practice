@@ -758,12 +758,13 @@ console.log(OddString("strings"), "Question no 56");
 
 function MathchStringLenght(str1, str2) {
   let eql = Math.min(str1.length === str2.length);
-  console.log(eql);
-  if (eql) return true;
-  else return false;
+  if (eql) return str1 + str2;
+  else if (str1.length > str2.length) return str1.slice(0, str2.lenght) + str2;
+  else str2.length > str1.length;
+  return str1 + str2.slice(0, str1.length);
 }
 
-console.log(MathchStringLenght("hello", "worlds"), "Question no 57");
+console.log(MathchStringLenght("java", "Script"), "Question no 57");
 // wrong
 
 // Question No 58
@@ -801,3 +802,32 @@ function CreatNewStr(str) {
   } else return false;
 }
 console.log(CreatNewStr("hello"), "Q no 60");
+
+// Question No 61
+// Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
+
+function ComputeTheSum(arr) {
+  if (arr.length > 3) {
+    return false;
+  }
+  let sum = arr[0] + arr[1] + arr[2];
+  return sum;
+}
+
+console.log(ComputeTheSum([12, 24, 36]), "Question No 61");
+
+// Question no 62
+// . Write a JavaScript program to rotate the elements left in a given array of integers of length 3.
+
+function RotateElement(array) {
+  let newArray = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    newArray += array[i];
+  }
+}
+console.log(RotateElement([1, 2, 3, 4, 5]), "Question No 62");
+
+// Question no 63
+// Write a JavaScript program to reverse the elements of a given array of integers of length 3.
+
+// function reverseArray(array) {}

@@ -825,9 +825,35 @@ function RotateElement(array) {
     newArray += array[i];
   }
 }
-console.log(RotateElement([1, 2, 3, 4, 5]), "Question No 62");
+// console.log(RotateElement([1, 2, 3, 4, 5]), "Question No 62");
 
 // Question no 63
-// Write a JavaScript program to reverse the elements of a given array of integers of length 3.
+// Write a JavaScript program to check whether 1 appears in the first or last position of a given array of integers. The array length must be larger than or equal to 1.
 
-// function reverseArray(array) {}
+function CheckedArray(array) {
+  let arr = array[0];
+  let last = array.length - 1;
+  return arr == 1 || array[last] == 1;
+}
+
+console.log(CheckedArray([0, 2, 5, 1]), "Question no 64");
+
+// Question No 64
+// 69. Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
+
+function computeTheSum(numarr) {
+  if (numarr.length === 3) {
+    return numarr[2] + numarr[1] + numarr[2];
+  }
+}
+
+console.log(computeTheSum([1, 2, 3]), "Question no 64");
+
+// Question no 65
+//Write a JavaScript program to rotate the elements left in a given array of integers of length 3
+
+function RotateArray(arr) {
+  return [arr[2], arr[1], arr[0]];
+}
+
+console.log(RotateArray([1, 2, 3]), "Question no 65");

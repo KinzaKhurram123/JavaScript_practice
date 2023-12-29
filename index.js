@@ -857,3 +857,66 @@ function RotateArray(arr) {
 }
 
 console.log(RotateArray([1, 2, 3]), "Question no 65");
+
+// Checking for of Statement
+let text = "hello";
+let text2 = "";
+for (let x of text) {
+  text2 += x + " ";
+}
+console.log(text2, "jahsdkhasjkdh");
+
+let obj = { fname: "John", lname: "Doe", age: 25 };
+let obj2 = "";
+for (let x in obj) {
+  obj2 += obj[x] + " ";
+}
+console.log(obj2, "uahsgdagjsdg");
+
+let day1 = "Monday";
+
+switch (day1) {
+  case "Monday":
+    text = "Today is Monday";
+  case "Tuesday":
+    text = "Today is Tuesday";
+  case "Wednesday":
+    text = "Today is Wednesday";
+  default:
+    text = "not found";
+}
+
+console.log(text, "gasjdgjsg");
+
+let x = 1;
+
+switch (x) {
+  case 0:
+    text = "value is 0";
+    break;
+  case 1:
+    text = "value is 1";
+    break;
+  default:
+    text = "No value found";
+}
+console.log(text, "jADhsfhs");
+
+// const emphtySet = new Set();
+// asserts.equal(emphtySet.size, 0);
+// console.log(emphtySet, "asdkahj");
+
+const set = new Set().add("blue").add("Green");
+console.log(typeof (4 * "k"), "afsdhgfshgafd");
+
+// Check the number even or odd
+
+function CheckOddNum(number) {
+  if (number % 2 === 0) {
+    console.log("the number is even");
+  } else {
+    console.log("The number is odd");
+  }
+}
+
+CheckOddNum(4);

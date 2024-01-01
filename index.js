@@ -907,7 +907,9 @@ console.log(text, "jADhsfhs");
 // console.log(emphtySet, "asdkahj");
 
 const set = new Set().add("blue").add("Green");
-console.log(typeof (4 * "k"), "afsdhgfshgafd");
+console.log(set, "ksaaj");
+
+console.log(typeof ([] * "k"), "afsdhgfshgafd");
 
 // Check the number even or odd
 
@@ -920,3 +922,103 @@ function CheckOddNum(number) {
 }
 
 CheckOddNum(4);
+
+// let a = 1;
+// let b = 2;
+// console.log(a >>> b, "jasgdkagskd");
+
+const num1 = 100;
+
+console.log((x ||= 2), "sjhdkahsdkh");
+
+const myObj = { h: 4 };
+console.log(delete myObj.h);
+
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+
+console.log(sum(1, 2, 3, 4));
+
+// Loops Practice
+// Write a JavaScript for loop that iterates from 0 to 15. For each iteration, it checks if the current number is odd or even, and displays a message on the screen.
+
+for (let x = 0; x <= 15; x++) {
+  if (x === 0) {
+    console.log(x + " is even");
+  } else if (x % 2 === 0) {
+    console.log(x + " is even");
+  } else {
+    console.log(x + " is odd");
+  }
+}
+
+// Write a JavaScript program that computes the average marks of the following students. Then, this average is used to determine the corresponding grade
+// Student Name	    Marks
+// David	          80
+// Vinoth           77
+// Divya	          88
+// Ishitha	        95
+// Thomas	          68
+
+let students = [
+  { stdname: "David", marks: 80 },
+  { stdname: "Vinoth", marks: 77 },
+  { stdname: "Divya", marks: 88 },
+  { stdname: "Ishitha", marks: 95 },
+  { stdname: "Thomas", marks: 68 },
+];
+
+let stu = {};
+
+function StudentMarks() {
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].marks >= 90) {
+      console.log(students[i].stdname + " " + students[i].marks, "grade A");
+    } else if (students[i].marks >= 80) {
+      console.log(students[i].stdname + " " + students[i].marks, " grade B");
+    } else if (students[i].marks >= 70) {
+      console.log(students[i].stdname + " " + students[i].marks, " grade C");
+    } else {
+      console.log(students[i].stdname + " " + students[i].marks, " grade D");
+    }
+  }
+}
+
+StudentMarks();
+
+// Write a JavaScript program that iterates integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers multiples of both three and five print "FizzBuzz".
+
+function MultiplesOf() {
+  for (i = 1; i < 100; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log(i, "fizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log(i, "fizz");
+    } else if (i % 5 === 0) {
+      console.log(i, "buzz");
+    }
+  }
+}
+
+MultiplesOf();
+
+// Write a JavaScript program to sum 3 and 5 multiples under 1000.
+
+function Multiples() {
+  let sum = 0;
+  for (i = 0; i < 1000; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      sum += i;
+    }
+  }
+  console.log(sum, "shdashdkahskdh");
+}
+
+Multiples();
